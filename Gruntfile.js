@@ -330,12 +330,12 @@ module.exports = function (grunt) {
                 'htmlmin'
             ]
         },
-        karma: {
-            unit: {
-                configFile: 'karma.conf.js',
-                singleRun: true
-            }
-        },
+//        karma: {
+//            unit: {
+//                configFile: 'karma.conf.js',
+//                singleRun: true
+//            }
+//        },
         cdnify: {
             dist: {
                 html: ['<%= yeoman.dist %>/*.html']
@@ -379,13 +379,13 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('test', [
-        'clean:server',
-        'concurrent:test',
-        'autoprefixer',
-        'connect:test',
-        'karma'
-    ]);
+//    grunt.registerTask('test', [
+//        'clean:server',
+//        'concurrent:test',
+//        'autoprefixer',
+//        'connect:test',
+//        'karma'
+//    ]);
 
     grunt.registerTask('build', [
         'clean:dist',
@@ -404,7 +404,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'jshint',
-        'test',
+//        'test',
         'build'
     ]);
 };
