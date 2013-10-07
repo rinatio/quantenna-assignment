@@ -1,0 +1,18 @@
+/**
+ * App configuration.
+ */
+(function(angular) {
+    'use strict';
+
+    angular.module('quantennaAssignmentApp', ['ngRoute', 'ngResource', 'ngSanitize'])
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'views/main.html',
+                    controller: 'MainCtrl'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                });
+        });
+})(angular);

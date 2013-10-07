@@ -1,0 +1,74 @@
+<div ng-show="author.books" ng-controller="BooksCtrl">
+    <h3>Books:</h3>
+    <div class="accordion" id="accordion">
+        <div class="accordion-group" ng-repeat="book in author.books">
+            <div class="accordion-heading">
+                <a href="javascript:void(0);"
+                   class="accordion-toggle"
+                   data-toggle="collapse"
+                   data-parent="#accordion"
+                   data-target="#collapse{{$index}}">
+                    {{book.title}}
+                </a>
+            </div>
+            <div id="collapse{{$index}}" class="accordion-body collapse"
+                 ng-class="$first ? 'in' : null">
+                <div class="accordion-inner">
+                    <img ng-src="{{book.img}}" alt="" class="pull-right"/>
+                    <div ng-bind-html="book.description"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button to trigger modal -->
+    <a data-target="#book-modal" role="button" class="btn" data-toggle="modal">
+        Add book
+    </a>
+
+    <!-- Modal -->
+    <div id="book-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="book-modal-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="book-modal-label">Book Form</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal" name="BookForm" ng-submit="addBook()">
+                <div class="control-group">
+                    <label class="control-label" for="bookTitle">Title</label>
+                    <div class="controls">
+                        <input ng-model="book.title"
+                               name="title"
+                               type="text"
+                               id="bookTitle"
+                               placeholder="Title"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="bookImg">Image Url</label>
+                    <div class="controls">
+                        <input ng-model="book.img"
+                               name="img"
+                               type="text"
+                               id="bookImg"
+                               placeholder="Image Url"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="bookDescription">Text</label>
+                    <div class="controls">
+                        <textarea ng-model="book.description"
+                                  id="bookDescription"
+                                  placeholder="Description"
+                                  ng-required="true"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button ng-disabled="BookForm.$invalid" class="btn btn-primary" ng-click="addBook()">Save</button>
+        </div>
+    </div>
+</div>

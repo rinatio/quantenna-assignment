@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="span3">
+        <ul>
+            <li ng-repeat="country in countries">
+                {{country.name}}
+                <ul>
+                    <li ng-repeat="author in country.authors">
+                        <a href="javascript:void(0)" ng-click="clickAuthor(author)">
+                            {{author.name}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="span9">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="javascript:void(0)" data-target="#author" data-toggle="tab">
+                    Author
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" data-target="#books" data-toggle="tab">
+                    Books
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" data-target="#comments" data-toggle="tab">
+                    Comments
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" data-target="#charts" data-toggle="tab">
+                    Charts
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="author">
+                <div ng-include="'/views/tab_author.html'"></div>
+            </div>
+            <div class="tab-pane" id="books">
+                <div ng-include="'/views/tab_books.html'"></div>
+            </div>
+            <div class="tab-pane" id="comments">
+                <div ng-include="'/views/tab_comments.html'"></div>
+            </div>
+            <div class="tab-pane" id="charts">
+                <div ng-include="'/views/tab_charts.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
