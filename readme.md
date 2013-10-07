@@ -1,4 +1,4 @@
-#Installtion
+#Installation
 
     $ npm install
     $ bower install
