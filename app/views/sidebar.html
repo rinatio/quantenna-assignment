@@ -1,0 +1,14 @@
+<div class="q-sidebar hidden-print affix" role="complementary">
+    <ul class="nav q-sidenav">
+        <li ng-repeat="country in countries">
+            {{country.name}}
+            <ul class="nav">
+                <li ng-repeat="auth in country.authors" ng-class="auth == author ? 'active' : null">
+                    <a href="javascript:void(0)" ng-click="clickAuthor(auth)">
+                        {{auth.name}}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

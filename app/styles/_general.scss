@@ -1,0 +1,19 @@
+html, body {
+  margin: 20px;
+}
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.comment-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+form[name="CommentForm"] {
+  margin-top: 15px;
+}
+

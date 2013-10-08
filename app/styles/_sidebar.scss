@@ -1,0 +1,76 @@
+.q-sidenav {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f7f5fa;
+  border-radius: 5px;
+}
+
+/* By default it's not affixed in mobile views, so undo that */
+.q-sidebar{
+  &.affix {
+    position: static;
+  }
+  .nav > li > a {
+    display: block;
+    color: #716b7a;
+    padding: 5px 20px;
+    &:hover, &:focus {
+      text-decoration: none;
+      background-color: #e5e3e9;
+      border-right: 1px solid #dbd8e0;
+    }
+  }
+  .nav > .active {
+    > a, &:hover > a, &:focus > a {
+      font-weight: bold;
+      color: #563d7c;
+      background-color: transparent;
+      border-right: 1px solid #563d7c;
+    }
+  }
+
+  .nav .nav {
+    margin-bottom: 8px;
+    > li > a {
+      padding-top:    3px;
+      padding-bottom: 3px;
+      padding-left: 30px;
+      font-size: 90%;
+    }
+  }
+}
+
+
+
+
+
+/* Show and affix the side nav when space allows it */
+@media screen and (min-width: 992px) {
+  /* Widen the fixed sidebar */
+  .q-sidebar.affix,
+  .q-sidebar.affix-bottom {
+    width: 213px;
+  }
+  .q-sidebar.affix {
+    position: fixed; /* Undo the static from mobile first approach */
+    top: 80px;
+  }
+  .q-sidebar.affix-bottom {
+    position: absolute; /* Undo the static from mobile first approach */
+  }
+  .q-sidebar.affix-bottom .q-sidenav,
+  .q-sidebar.affix .q-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .q-sidebar.affix-bottom,
+  .q-sidebar.affix {
+    width: 263px;
+  }
+}

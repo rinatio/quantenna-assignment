@@ -45,7 +45,7 @@
                  */
                 getGravatarSrc: function(email) {
                     var path = 'http://www.gravatar.com/avatar/';
-                    return path + CryptoJS.MD5(email).toString();
+                    return path + CryptoJS.MD5(email).toString() + '?s=60';
                 }
             });
             // Bind this reference to the scope for js events handlers

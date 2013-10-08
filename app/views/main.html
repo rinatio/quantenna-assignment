@@ -1,19 +1,7 @@
 <div class="row">
-    <div class="span3">
-        <ul>
-            <li ng-repeat="country in countries">
-                {{country.name}}
-                <ul>
-                    <li ng-repeat="author in country.authors">
-                        <a href="javascript:void(0)" ng-click="clickAuthor(author)">
-                            {{author.name}}
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+    <div class="col-md-3" ng-include="'/views/sidebar.html'">
     </div>
-    <div class="span9">
+    <div class="col-md-9">
         <ul class="nav nav-tabs">
             <li class="active">
                 <a href="javascript:void(0)" data-target="#author" data-toggle="tab">
@@ -46,8 +34,7 @@
             <div class="tab-pane" id="comments">
                 <div ng-include="'/views/tab_comments.html'"></div>
             </div>
-            <div class="tab-pane" id="charts">
-                <div ng-include="'/views/tab_charts.html'"></div>
+            <div class="tab-pane" id="charts" ng-include="'/views/tab_charts.html'">
             </div>
         </div>
     </div>

@@ -1,19 +1,20 @@
 <div ng-controller="CommentCtrl" ng-show="author">
     <div ng-repeat="comment in author.comments" class="row comment-row">
-        <div class="span1">
+        <div class="col-lg-1">
             <img ng-src="{{getGravatarSrc(comment.email)}}"
                  alt="gravatar">
         </div>
-        <div class="span8">
+        <div class="col-lg-8">
             <pre>{{comment.text}}</pre>
             <a href="javascript:void(0)" class="pull-right" ng-click="deleteComment($index)">delete</a>
         </div>
     </div>
     <form class="form-horizontal" name="CommentForm" ng-submit="addComment()">
-        <div class="control-group">
-            <label class="control-label" for="formEmail">Email</label>
-            <div class="controls">
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="formEmail">Email</label>
+            <div class="col-lg-7">
                 <input ng-model="comment.email"
+                       class="form-control"
                        name="email"
                        type="email"
                        id="formEmail"
@@ -21,19 +22,22 @@
                        ng-required="true">
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label" for="formComment">Text</label>
-            <div class="controls">
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="formComment">Text</label>
+            <div class="col-lg-7">
                 <textarea ng-model="comment.text"
+                          class="form-control"
                           id="formComment"
                           placeholder="Comment Text"
                           ng-required="true"></textarea>
             </div>
         </div>
-        <div class="form-actions">
-            <button ng-disabled="CommentForm.$invalid" type="submit" class="btn btn-primary">
-                Save
-            </button>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-7">
+                <button ng-disabled="CommentForm.$invalid" type="submit" class="btn btn-primary">
+                    Save
+                </button>
+            </div>
         </div>
     </form>
 </div>
